@@ -16,7 +16,7 @@ import { ThrottlerModule } from '@nestjs/throttler';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: POSTGRES_HOST,
       port: POSTGRES_PORT,
       username: POSTGRES_USER,
       password: POSTGRES_PASSWORD,
