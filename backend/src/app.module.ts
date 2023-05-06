@@ -12,12 +12,13 @@ import { Wishlist } from './wishlists/entities/wishlist.entity';
 import { Wish } from './wishes/entities/wish.entity';
 import { ThrottlerModule } from '@nestjs/throttler';
 
+const {POSTGRES_HOST, POSTGRES_PORT,POSTGRES_USER, POSTGRES_PASSWORD,POSTGRES_DB } = process.env;
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: POSTGRES_HOST,
-      port: POSTGRES_PORT,
+      port: +POSTGRES_PORT,
       username: POSTGRES_USER,
       password: POSTGRES_PASSWORD,
       database: POSTGRES_DB,

@@ -4,7 +4,7 @@ import { JwtService } from '@nestjs/jwt';
 import { UsersService } from '../users/users.service';
 import * as bcrypt from 'bcrypt';
 //import { JWT } from 'src/utils/const';
-
+const { JWT } = process.env;
 @Injectable()
 export class AuthService {
   constructor(

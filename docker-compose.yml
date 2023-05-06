@@ -6,7 +6,7 @@ services:
     build: ./backend
     image: backend
     env_file: .env
-    restart: always
+    restart: unless-stopped
     ports:
       - '4000:3000'
     depends_on:
@@ -17,7 +17,7 @@ services:
     container_name: frontend
     build: ./frontend
     env_file: .env
-    restart: always
+    restart: unless-stopped
     ports:
       - '8081:80'
     volumes:
@@ -30,7 +30,7 @@ services:
     container_name: postgres
     image: postgres:latest
     env_file: .env
-    restart: always
+    restart: unless-stopped
     volumes:
       - superpostgres:/data/postgres
     networks:

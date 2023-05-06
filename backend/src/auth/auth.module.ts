@@ -8,7 +8,7 @@ import { AuthController } from './auth.controller';
 //import { JWT } from 'src/utils/const';
 import { Jwt } from './jwt';
 import { Local } from './local';
-
+const { JWT } = process.env;
 @Module({
   imports: [
     UsersModule,
